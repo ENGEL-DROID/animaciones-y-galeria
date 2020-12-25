@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- Librería principal de jQuery: -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+        <!-- Librerías css y js de FancyBox: -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // con la siguiente función el menú se abre
+                $("button").click(function() {
+                    $("#menu").toggleClass("menuAbierto");
+                });
+                // con la siguiente función se amplía/disminuye la foto
+                $("#image").mouseover(function() {
+                    $(this).stop().animate({width:"60vw"}, 1000);
+                }); // el método stop() se usa para evitar bucles infinitos de la animación
+                $("#image").mouseout(function() {
+                    $(this).stop().animate({width:"40vw"}, 1000);
+                });
+                // aquí se crea la animación de la galería
+                var galeria= [4]; // se crea un array vacío
+                for (var i=0; i<galeria.length; i++) {
+                    // a cada elemento se le asigna un efecto hover:
+                    galeria[i]= $("#animadas td").hover(
+                        function () {
+                            $(this).stop().animate({width:"25vw", height:"35vh"});
+                        },
+                        function () {
+                            $(this).stop().animate({width:"15vw", height:"25vh"});
+                        }
+                    );
+                }
+                // galería fancybox:
+                $("#imax").fancybox({
+                    closeExisting: false,
+                    loop: true,
+                    gutter: 50,
+                    keyboard: true,
+                    preventCaptionOverlap: true,
+                    arrows: true,
+                    infobar: true,
+                    smallBtn: "auto",
+                    toolbar: "auto",
+                    buttons: [
+                        "zoom",
+                        "share",
+                        "slideShow",
+                        "fullScreen",
+                        "download",
+                        "thumbs",
+                        "close"
+                    ],
+                    idleTime: 3,
+                    protect: false,
+                    modal: false,
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <a href="#" style="color: rgb(255, 187, 0);"></a>
+        <h1>El Inicio de una nueva Era</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, quisquam? Iste, dolorum consequuntur nobis placeat, laborum nihil, debitis delectus cum vitae animi itaque quasi a officia suscipit. Molestiae, quia consectetur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam deleniti suscipit aliquid voluptates enim, distinctio dolores harum accusantium. Vel autem explicabo quas mollitia fuga, perferendis amet repellat iure a provident.
+        <img src="bot.jpg" alt="image" id="image">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga minus voluptatibus hic nam quia consequuntur! Similique corporis deserunt neque asperiores quo veniam incidunt obcaecati nobis possimus, sed maiores nulla aliquam.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, aut, aliquid quibusdam eos deserunt, eaque rem repellendus officia nam porro ipsa ipsam voluptas voluptatibus reiciendis exercitationem alias corrupti amet blanditiis?
+        </p>
+    
+        <div id="menu" class="menuCerrado">
+            <ul>
+                <button>X</button>
+                <li><a href="#">Propuestas</a></li>
+                <li><a href="#">Ciclos</a></li>
+                <li><a href="#">Espacios</a></li>
+                <li><a href="#">Dudas</a></li>
+                <li><a href="#">Enlaces</a></li>
+            </ul>
+        </div>
+        
+        <table>
+            <tr id="animadas">
+                <td><img src="images/image1.jpg" id="galeria"></td>
+                <td><img src="images/image2.jpg" id="galeria"></td>
+                <td><img src="images/image3.jpg" id="galeria"></td>
+                <td><img src="images/image4.jpg" id="galeria"></td>
+            </tr>
+        </table>
+
+        <table class="staticas">
+            <tr>
+                <td colspan="4" id="titu"><h2>Galería FancyBox</h2></td>
+            </tr>
+            <tr>
+                <!-- Atención: para que funcione correctamente se debe agregar el atributo href="" con la ruta de la imagen repetida igual que en el atributo src="" -->
+                <td><img href="images/image5.jpg" src="images/image5.jpg" id="galeria" data-fancybox="imax"></td>
+                <td><img href="images/image7.jpg" src="images/image7.jpg" id="galeria" data-fancybox="imax"></td>
+                <td><img href="images/image8.jpg" src="images/image8.jpg" id="galeria" data-fancybox="imax"></td>
+                <td><img href="images/image9.jpg" src="images/image9.jpg" id="galeria" data-fancybox="imax"></td>
+            </tr>
+        </table>
+    
+    </body>
+    
+</html>

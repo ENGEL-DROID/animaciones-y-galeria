@@ -1,0 +1,75 @@
+body {
+    padding: 8%;
+    color: gray;
+    font-family: sans-serif;
+    line-height: 2.5em;
+    text-align: justify;
+}
+#image {
+    width: 40vw;
+    height: 100%;
+    float: right;
+    padding-left: 5%;
+}
+.menuCerrado {
+    position: absolute;
+    top: 30%;
+    left: -16%;
+    width: 20vw;
+    height: 25vh;
+    background-color: rgb(255, 187, 0);
+    color: rgb(65, 65, 65);
+}
+.menuAbierto {
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    width: 20vw;
+    height: 25vh;
+    background-color: rgb(255, 187, 0);
+    color: rgb(65, 65, 65);
+    box-shadow: 5px 6px 20px rgba(114, 83, 24, 0.432);
+}
+button {
+    float: right;
+    color: rgb(65, 65, 65);
+    margin-right: 10%;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+}
+ul {
+    margin-left: 10%;
+}
+a {
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+}
+table {
+    position: absolute;
+    width: 90%;
+    height: 30vh;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 5%;
+    text-align: center;
+}
+.staticas {
+    width: 90%;
+    height: 30vh;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 35%;
+    padding-bottom: 15%;
+    text-align: center;
+}
+td {
+    width: 15vw;
+    height: 25vh;
+}
+#galeria {
+    width: 100%;
+    height: 100%;
+}
+#titu {
+    height: 5vh;text-align: left;
+}
